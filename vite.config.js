@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
 import  IconsResolver  from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 
 export default defineConfig({
@@ -14,14 +15,16 @@ export default defineConfig({
       resolvers:[
         IconsResolver({
           prefix:'Icon'
-        })
+        }),
+        ElementPlusResolver()
       ]
     }),
     Components({
       resolvers:[
         IconsResolver({
           enabledCollections:['ep']
-        })
+        }),
+        ElementPlusResolver()
       ]
     }),
     Icons({
@@ -38,6 +41,7 @@ export default defineConfig({
         '/api': {
           target: '',
           changeOrigin: true,
+          prot:3001,
           rewrite: (path) => path.replace(/^\/api/, '') // 不可以省略rewrite
         }
       }
