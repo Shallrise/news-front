@@ -122,7 +122,7 @@ const userlogin = () => {
 </script>
 
 <style src="../assets/font/googleapis.css"></style>
-<style scoped>
+<style>
 * {
   margin: 0;
   padding: 0;

@@ -117,6 +117,3 @@ onMounted(() => {
 
 
 <style src="@/styles/new-list.css"></style>
-<style lang="scss" scoped>
-
-</style>

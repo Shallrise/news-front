@@ -101,6 +101,3 @@ onMounted(()=>{
 </script>
 
 <stle src="@/styles/homepage.css"></stle>
-<style lang="scss" scoped>
-
-</style>
