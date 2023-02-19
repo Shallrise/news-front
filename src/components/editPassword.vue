@@ -94,7 +94,7 @@ const handleAvatarSuccess = (res) => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .mainbox {
   width: 700px;
   height: 600px;

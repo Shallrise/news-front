@@ -373,5 +373,5 @@ onMounted(() => {
 });
 </script>
 
-<style src="@/styles/artical-detail.css"></style>
-<style src="@/styles/new-list.css"></style>
+<style src="@/styles/artical-detail.css" scoped></style>
+<style src="@/styles/new-list.css" scoped></style>

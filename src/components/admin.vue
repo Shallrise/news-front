@@ -153,7 +153,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .adminBox{
     width: 1200px;
     height: 500px;

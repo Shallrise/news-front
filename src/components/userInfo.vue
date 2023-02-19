@@ -93,7 +93,7 @@ const handleAvatarSuccess = (res) => {
 };
 </script>
 
-<style>
+<style scoped>
 .mainbox {
   width: 700px;
   height: 600px;

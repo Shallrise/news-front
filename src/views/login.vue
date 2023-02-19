@@ -121,8 +121,8 @@ const userlogin = () => {
 };
 </script>
 
-<style src="../assets/font/googleapis.css"></style>
-<style>
+<style src="../assets/font/googleapis.css" scoped></style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;

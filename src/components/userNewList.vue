@@ -116,4 +116,4 @@ onMounted(() => {
 </script>
 
 
-<style src="@/styles/new-list.css"></style>
+<style src="@/styles/new-list.css" scoped></style>

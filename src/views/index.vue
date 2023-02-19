@@ -100,4 +100,4 @@ onMounted(()=>{
 
 </script>
 
-<stle src="@/styles/homepage.css"></stle>
+<stle src="@/styles/homepage.css" scoped></stle>

@@ -82,4 +82,4 @@ const goPostNews = () =>{
 
 </script>
 
-<style src="@/styles/head.css"></style>
+<style src="@/styles/head.css" scoped></style>
