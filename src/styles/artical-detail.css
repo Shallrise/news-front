@@ -1,0 +1,234 @@
+input:focus, textarea:focus, select:focus {
+    outline: 0
+}
+input, textarea, button {
+    border: 0
+}
+.single-post-wrapper {
+    padding-top: 35px
+}
+.single-post-wrapper .section-head {
+    border-bottom: 1px solid #dae6f9;
+    padding-bottom: 30px;
+    margin-bottom: 38px
+}
+.single-post-wrapper .left-content .post-card {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.single-post-wrapper .left-content .card-thumb {
+    border-radius: 15px
+}
+
+.single-post-wrapper .left-content .card-content {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.single-post-wrapper .left-content .card-content .heading-primary {
+    margin-bottom: 30px
+}
+
+.single-post-wrapper .left-content .body-text {
+    font-size: 18px
+}
+
+.section-padding {
+    padding: 103px 0
+}
+
+.section-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 30px
+}
+
+.single-post-wrapper .tags {
+    margin-top: 40px;
+    border-top: 1px solid #dae6f9;
+    padding-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.single-post-wrapper .tags h3 {
+    margin-right: 10px
+}
+
+.single-post-wrapper .tags a {
+    margin-bottom: 0
+}
+
+.categories-tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.categories-tags a {
+    padding: 0 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Titillium Web", sans-serif;
+    color: #3d5b7d;
+    border: 1px solid #dae6f9;
+    margin-bottom: 10px
+}
+
+.categories-tags a:hover {
+    background: linear-gradient(91.85deg, #007aea 0, #00c2ff 100%);
+    -webkit-box-shadow: 0 10px 15px rgba(23, 126, 247, 0.25);
+    box-shadow: 0 10px 15px rgba(23, 126, 247, 0.25);
+    color: white
+}
+
+.categories-tags a:not(:last-child) {
+    margin-right: 10px
+}
+
+.single-post-wrapper .post-comments {
+    margin-top: 100px
+}
+
+.single-post-wrapper .post-comments h3 {
+    margin-bottom: 20px
+}
+
+.single-post-wrapper .post-comments .comment-card {
+    border: 1px solid #dae6f9;
+    border-radius: 15px;
+    padding: 40px
+}
+
+.single-post-wrapper .post-comments .comment-card p {
+    font-size: 16px
+}
+
+.single-post-wrapper .post-comments .comment-card:not(:last-child) {
+    margin-bottom: 10px
+}
+
+.single-post-wrapper .post-comments .comment-card.replay {
+    background-color: #eef5ff;
+    margin-left: 40px;
+    border: 0
+}
+
+.single-post-wrapper .post-comments .card-meta {
+    border: 0;
+    padding-bottom: 0;
+    margin-bottom: 20px
+}
+
+.single-post-wrapper .post-comments .card-meta .meta-item .author-name {
+    font-size: 18px
+}
+
+.single-post-wrapper .post-comments .card-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.single-post-wrapper .post-comments .card-top .button-replay {
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+.single-post-wrapper .post-comments .card-top .button-replay span {
+    margin-right: 5px
+}
+.meta-item {
+    margin-right: 25px;
+    position: relative;
+    font-size: 14px
+}
+.meta-item:not(:last-child)::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #177ef7;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+.body-text {
+    font-size: 16px;
+    line-height: 170%;
+    color: #3d5b7d;
+    font-weight: 400;
+    font-family: "Titillium Web", sans-serif
+}
+
+.body-text.light {
+    color: white
+}
+.single-post-wrapper .left-content .body-text {
+    font-size: 18px
+}
+.single-post-wrapper .comment-box {
+    margin-top: 100px
+}
+
+.single-post-wrapper .comment-box .row>* {
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.single-post-wrapper .comment-box h3 {
+    margin-bottom: 20px
+}
+
+.single-post-wrapper .comment-box .comment-form input, .single-post-wrapper .comment-box .comment-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: #eef5ff;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+.single-post-wrapper .comment-box .comment-form textarea {
+    min-height: 120px
+}
+
+.single-post-wrapper .comment-box .comment-form .button {
+    margin-top: -10px
+}
+
+.button.button-primary {
+    color: white;
+    background: linear-gradient(91.85deg, #007aea 0, #00c2ff 100%);
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    -webkit-box-shadow: 0 10px 15px rgba(23, 126, 247, 0.25);
+    box-shadow: 0 10px 15px rgba(23, 126, 247, 0.25)
+}
+

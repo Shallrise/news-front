@@ -1,0 +1,173 @@
+a{
+    text-decoration: none;
+}
+li{   
+    list-style-type:none;
+}
+.blog-list-wrapper {
+    padding-top: 35px
+}
+
+.section-padding {
+    padding: 103px 0
+}
+
+.section-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 30px
+}
+
+.blog-list-wrapper .section-head {
+    border-bottom: 1px solid #dae6f9;
+    padding-bottom: 30px;
+    margin-bottom: 38px
+}
+
+.heading-secondary {
+    font-size: 30px;
+    line-height: 39px;
+    font-family: "Advent Pro", sans-serif;
+    color: #222
+}
+
+.c-bredcrumb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.c-bredcrumb li {
+    position: relative
+}
+
+.c-bredcrumb li:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 15px
+}
+
+.c-bredcrumb li:not(:last-child)::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #177ef7;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.c-bredcrumb li a {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d5b7d
+}
+.blog-list-wrapper .left-content {
+    padding-right: 50px
+}
+.blog-list-wrapper .left-content .post-card {
+    background-color: white;
+    -webkit-box-shadow: 0 10px 30px rgba(61, 91, 125, 0.15);
+    box-shadow: 0 10px 30px rgba(61, 91, 125, 0.15);
+    border-radius: 15px
+}
+
+.blog-list-wrapper .left-content .post-card:not(:last-child) {
+    margin-bottom: 40px
+}
+.blog-list-wrapper .left-content .card-thumb {
+    width: 100%;
+    min-height: 500px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px
+}
+.blog-list-wrapper .left-content .card-content {
+    margin-top: 30px;
+    padding: 40px;
+    padding-top: 0
+}
+.blog-list-wrapper .left-content .post-content h3 {
+    margin-top: 0
+}
+
+.blog-list-wrapper .left-content .post-content p {
+    margin-right: 20px;
+    margin-top: 30px
+}
+.blog-list-wrapper .left-content .post-content .button {
+    min-width: 60px;
+    min-height: 60px
+}
+.blog-list-wrapper .left-content .card-meta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #dae6f9;
+    padding-bottom: 30px;
+    margin-bottom: 30px
+}
+.blog-list-wrapper .left-content .card-meta .meta-item .author-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px
+}
+.blog-list-wrapper .left-content .card-meta .meta-item .author-name {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Advent Pro", sans-serif;
+    color: #222
+}
+.blog-list-wrapper .left-content .card-meta .post-author {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+.blog-list-wrapper .left-content .card-meta .category {
+    padding: 0 10px;
+    margin-right: 10px
+}
+.blog-list-wrapper .right-content .widget-search-box {
+    max-width: 100%;
+    margin-bottom: 30px;
+    margin-top: 0
+}
+
+.blog-list-wrapper .right-content .widget-search-box input {
+    width: 100%;
+    background-color: #eef5ff
+}
+
+.blog-list-wrapper .right-content .card-thumb {
+    margin-top: 20px
+}
+
+.heading-primary {
+    font-size: 48px;
+    font-weight: 600;
+    /* line-height: 57px; */
+    font-family: "Advent Pro", sans-serif;
+    color: #222;
+    /* text-transform: capitalize */
+}

@@ -1,230 +1,217 @@
 <template>
-  <section>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="box">
-      <div class="square" style="--i:0;"></div>
-      <div class="square" style="--i:1;"></div>
-      <div class="square" style="--i:2;"></div>
-      <div class="square" style="--i:3;"></div>
-      <div class="square" style="--i:4;"></div>
-      <div class="container">
-        <div class="form">
-          <h2>注册</h2>
-          <form>
-            <div class="inputBox">
-              <input type="text" placeholder="Username">
-            </div>
-            <div class="inputBox">
-              <input type="password" placeholder="Password">
-            </div>
-            <div class="inputBox">
-              <input type="submit" value="Login">
-            </div>
-          </form>
+  <div class="my">
+    <img class="bgc" :src="bgc" alt="" />
+    <div class="submit">
+      <span class="form_title">注册</span>
+      <el-form :model="registerForm">
+        <div class="form_input">
+          <span>用户名：</span>
+          <el-form-item>
+            <el-input
+              class="inputs"
+              type="text"
+              v-model="registerForm.username"
+            />
+          </el-form-item>
         </div>
+        <div class="form_input">
+          <span>密码：</span>
+          <el-form-item>
+            <el-input
+              class="inputs"
+              type="password"
+              v-model="registerForm.password"
+              show-password
+            />
+          </el-form-item>
+        </div>
+        <div class="form_input">
+          <span>姓名：</span>
+          <el-form-item>
+            <el-input class="inputs" v-model="registerForm.nickName" />
+          </el-form-item>
+        </div>
+        <div class="form_input">
+          <span>电话：</span>
+          <el-form-item>
+            <el-input class="inputs" v-model="registerForm.phone" />
+          </el-form-item>
+        </div>
+        <div class="form_input">
+          <span>邮箱：</span>
+          <el-form-item>
+            <el-input
+              class="inputs"
+              v-model="registerForm.email"
+            />
+          </el-form-item>
+        </div>
+        <div class="form_input">
+          <span>性别：</span>
+          <el-form-item>
+            <el-select
+              v-model="registerForm.sex"
+              class="m-2"
+              placeholder="Select"
+              size="large"
+            >
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              />
+            </el-select>
+          </el-form-item>
+        </div>
+      </el-form>
+      <div class="b_submit">
+        <el-button class="b">重置</el-button>
+        <el-button class="home_href" @click="register">注册</el-button>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive,ref } from "vue";
+import { useRouter } from 'vue-router'
+import { ElMessage } from "element-plus";
+import bgcImage from "@/assets/images/pur.jpg";
+import { getRegistor } from "@/api/login.js";
 
-<style src="../assets/font/googleapis.css"></style>
-<style  scoped>
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+const router = useRouter();
+
+const registerForm = ref({
+  username: "",
+  password: "",
+  nickName: "",
+  phone: "",
+  sex: "",
+  email: "",
+});
+const bgc = reactive(bgcImage);
+const options = [
+    {
+        value:0,
+        label:'男'
+    },{
+        value:1,
+        label:'女'
+    }
+]
+
+const register = () => {
+    console.log(registerForm);
+  getRegistor(registerForm.value).then((res) => {
+    console.log(res);
+    if (res.data.code == 200) {
+        ElMessage({
+          message: "注册成功",
+          type: "success",
+        });
+        router.push({
+					path:'/login',
+				})
+    } else {
+        ElMessage({
+        message: "注册失败",
+        type: "error",
+      });
+    }
+  });
+};
+</script>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    overflow: hidden;
-}
-
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    /* min-height:100vh; */
-    background: linear-gradient(to bottom,#f1f4f9,#dff1ff);
-}
-
-section .color{
-  position: absolute;
-  filter: blur(150px);
-}
-
-section .color:nth-child(1){
-  top:-35px;
-  width: 600px;
-  height: 600px;
-  background: #ff359b;
-}
-
-section .color:nth-child(2)
-{
-  bottom:-150px;
-  left:100px;
-  width: 500px;
-  height: 500px;
-  background: #fffd87;
-}
-
-section .color:nth-child(3)
-{
-  bottom:50px;
-  right:100px;
-  width: 300px;
-  height:300px;
-  background: #00d2ff;
-}
-
-.box{
-  position:relative;
-}
-
-.box .square
-{
-  position: absolute;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
-  border:1px solid rgba(255,255,255,0.5);
-  border-right:1px solid rgba(255,255,255,0.2);
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);
-  border-radius:10px;
-  animation: animate 10s linear infinite;
-  animation-delay:calc(-1s * var(--i)) ;
-}
-@keyframes animate {
-  0%,100%
-  {
-    transform: translateY(-40px);
-  }
-  50%
-  {
-    transform: translateY(40px);
-  }
-}
-
-.box .square:nth-child(1)
-{
-  top:-50px;
-  right:-60px;
-  width: 100px;
-  height:100px;
-}
-
-.box .square:nth-child(2)
-{
-  top:150px;
-  left:-100px;
-  width: 120px;
-  height:120px;
-  z-index:2;
-}
-
-.box .square:nth-child(3)
-{
-  bottom:50px;
-  right:-60px;
-  width: 80px;
-  height:80px;
-  z-index:2;
-}
-
-.box .square:nth-child(4)
-{
-  bottom:-80px;
-  left:100px;
-  width: 50px;
-  height:50px;
-}
-
-.box .square:nth-child(5)
-{
-  top:-80px;
-  left:140px;
-  width: 60px;
-  height:60px;
-}
-
-.container{
-  position:relative;
-  width: 400px;
-  min-height: 400px;
-  background:rgba(255,255,255,0.1);
-  border-radius: 10px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
-  border:1px solid rgba(255,255,255,0.5);
-  border-right:1px solid rgba(255,255,255,0.2);
-  border-bottom:1px solid rgba(255,255,255,0.2);
-}
-
-.form{
+.from {
+  overflow: hidden;
   position: relative;
+}
+
+.bgc {
   width: 100%;
   height: 100%;
-  padding: 40px;
 }
 
-.form h2{
-  position: relative;
-  color: #fff;
-  font-size:24px;
-  font-weight: 600;
-  letter-spacing:1px;
-  margin-bottom:40px;
-}
-
-.form h2::before{
-  content:'';
+.submit {
   position: absolute;
-  left: 37%;
-  bottom: -10px;
-  width: 80px;
-  height: 4px;
-  background: #fff;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 80px;
+  width: 600px;
+  height: 650px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
-.form .inputBox{
-  width: 100%;
+.form_title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.form_input {
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
   margin-top: 20px;
 }
 
-.form .inputBox input{
-  width: 100%;
-  background: rgba(255,255,255,0.2);
-  border:none;
-  outline: none;
-  padding: 10px 20px;
-  border-radius:35px;
-  border:1px solid rgba(255,255,255,0.5);
-  border-right:1px solid rgba(255,255,255,0.2);
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  font-size:16px;
-  letter-spacing: 1px;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(255,255,255,0.05);
-}
-
-.form .inputBox input::placeholder{
-  color: #fff;
-}
-
-.form .inputBox input[type="submit"]{
-  background: #fff;
+.inputs {
+  height: 40px;
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+  background-color: #eee;
   color: #666;
-  max-width: 100px;
-  cursor: pointer;
-  margin-bottom:20px;
-  font-weight:600;
+}
+
+.form_input span {
+  width: 85px;
+  align-self: center;
+}
+
+.b_submit {
+  align-self: center;
+}
+
+.b {
+  border: none;
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  background: #999;
+  margin-top: 40px;
+}
+
+.b:hover {
+  background: #666;
+}
+
+.back {
+  margin-left: 10px;
+}
+
+.home_href {
+  border: none;
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  background: rgb(1, 114, 213);
 }
 </style>

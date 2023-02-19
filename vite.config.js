@@ -6,6 +6,7 @@ import Icons from 'unplugin-icons/vite'
 import  IconsResolver  from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 
 export default defineConfig({
@@ -29,7 +30,8 @@ export default defineConfig({
     }),
     Icons({
       autoInstall:true
-    })
+    }),
+    VueSetupExtend()
   ],
   resolve: {
       alias: [
@@ -39,11 +41,13 @@ export default defineConfig({
      server: {
       proxy: {
         '/api': {
-          target: '',
+          target: 'http://114.132.231.34:10010/',
           changeOrigin: true,
-          prot:3001,
           rewrite: (path) => path.replace(/^\/api/, '') // 不可以省略rewrite
         }
       }
-    }
+    },
+    optimizeDeps: {
+      include: ['A']
+  }
 })
