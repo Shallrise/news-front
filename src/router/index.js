@@ -3,6 +3,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
+    path:'/',
+    redirect:'/index'
+  },
+  {
     name:'首页',
     path: "/index",
     component: () => import("@/views/index.vue"),
