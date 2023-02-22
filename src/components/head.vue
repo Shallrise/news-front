@@ -32,8 +32,8 @@
         </nav>
       </div>
       <div class="content-right" v-if="!token">
-          <el-button type="primary" @click="gologin">登录</el-button>
-          <el-button type="primary" @click="goregister">注册</el-button>
+          <el-button  @click="gologin">登录</el-button>
+          <el-button  @click="goregister">注册</el-button>
         </div>
     </div>
   </header>
