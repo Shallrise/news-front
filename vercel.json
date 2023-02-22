@@ -3,7 +3,7 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/proxy"
-    }
-  ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
