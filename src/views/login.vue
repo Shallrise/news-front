@@ -114,7 +114,7 @@ const userlogin = () => {
           type: "success",
         });
         router.push({
-					path:'/index',
+					path:'/',
 				})
       } else {
         ElMessage({

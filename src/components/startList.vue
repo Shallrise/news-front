@@ -108,7 +108,7 @@
   
   const goIndex = () =>{
     router.push({
-      path: "/index",
+      path: "/",
     });
   }
   

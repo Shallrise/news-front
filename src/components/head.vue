@@ -32,8 +32,8 @@
         </nav>
       </div>
       <div class="content-right" v-if="!token">
-          <el-button type="primary">登录</el-button>
-          <el-button type="primary">注册</el-button>
+          <el-button type="primary" @click="gologin">登录</el-button>
+          <el-button type="primary" @click="goregister">注册</el-button>
         </div>
     </div>
   </header>
@@ -74,6 +74,18 @@ const goPostNews = () =>{
   router.push({
     path: "/edit-artical",
   });
+}
+
+const gologin = () =>{
+  router.push({
+    path:'/login'
+  })
+}
+
+const goregister = () =>{
+  router.push({
+    path:'/register'
+  })
 }
 
 

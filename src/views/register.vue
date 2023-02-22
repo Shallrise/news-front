@@ -111,7 +111,7 @@ const register = () => {
           type: "success",
         });
         router.push({
-					path:'/',
+					path:'/login',
 				})
     } else {
         ElMessage({
@@ -124,7 +124,7 @@ const register = () => {
 
 const goLogin = () =>{
   router.push({
-    path:'/'
+    path:'/login'
   })
 }
 </script>

@@ -107,7 +107,7 @@ const getDetail = (id) => {
 
 const goIndex = () => {
   router.push({
-    path: "/index",
+    path: "/",
   });
 };
 

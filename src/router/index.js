@@ -8,12 +8,12 @@ const routes = [
   // },
   {
     name:'首页',
-    path: "/index",
+    path: "/",
     component: () => import("@/views/index.vue"),
   },
   {
     name:'登录',
-    path: "/",
+    path: "/login",
     component: () => import("@/views/login.vue"),
   },
   {
