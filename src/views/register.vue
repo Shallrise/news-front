@@ -66,8 +66,8 @@
         </div>
       </el-form>
       <div class="b_submit">
-        <el-button class="b">重置</el-button>
         <el-button class="home_href" @click="register">注册</el-button>
+        <el-button class="b" @click="goLogin">登录</el-button>
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@ const register = () => {
           type: "success",
         });
         router.push({
-					path:'/login',
+					path:'/',
 				})
     } else {
         ElMessage({
@@ -121,6 +121,12 @@ const register = () => {
     }
   });
 };
+
+const goLogin = () =>{
+  router.push({
+    path:'/'
+  })
+}
 </script>
 
 <style scoped>
@@ -213,5 +219,6 @@ const register = () => {
   color: #fff;
   border-radius: 5px;
   background: rgb(1, 114, 213);
+  margin-top:40px;
 }
 </style>

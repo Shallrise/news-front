@@ -51,6 +51,11 @@
                 >Login</el-button
               >
             </div>
+            <div>
+              <el-button class="loginbutton right" @click="userRegister"
+                >Sign up</el-button
+              >
+            </div>
           </form>
         </div>
       </div>
@@ -70,6 +75,12 @@ const loginform = reactive({
   username: "",
   password: "",
 });
+
+const userRegister = () =>{
+  router.push({
+    path:'/register'
+  })
+}
 
 // const options=[
 //   {
@@ -172,6 +183,7 @@ section .color:nth-child(3) {
 
 .box {
   position: relative;
+  margin-top:50px;
 }
 
 .box .square {
@@ -337,5 +349,8 @@ section .color:nth-child(3) {
   color: #fff;
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
   margin-top: 40px;
+}
+.right{
+  margin-left:150px;
 }
 </style>

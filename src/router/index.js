@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 
 const routes = [
-  {
-    path:'/',
-    redirect:'/index'
-  },
+  // {
+  //   path:'/',
+  //   redirect:'/index'
+  // },
   {
     name:'首页',
     path: "/index",
@@ -13,7 +13,7 @@ const routes = [
   },
   {
     name:'登录',
-    path: "/login",
+    path: "/",
     component: () => import("@/views/login.vue"),
   },
   {

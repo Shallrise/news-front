@@ -16,7 +16,7 @@
             <li class="navmenu-item">
               <a class="navmenu-link" @click="goUser">用户信息</a>
             </li>
-            <li class="navmenu-item mega-menu-wrapper" v-if="roleId = 1">
+            <li class="navmenu-item mega-menu-wrapper" v-if="roleId == 1">
               <a  class="navmenu-link" @click="goAdmin"
                 >管理员
                 <span class="icon"><i class="fal fa-chevron-down"></i></span
@@ -27,9 +27,6 @@
             </li>
             <li class="navmenu-item">
               <a  class="navmenu-link" @click="goPostNews">发布新闻</a>
-            </li>
-            <li class="navmenu-item">
-              <a  class="navmenu-link">Hot spot</a>
             </li>
           </ul>
         </nav>
